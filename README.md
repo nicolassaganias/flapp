@@ -1,21 +1,43 @@
-# GT-Arduino-to-MIT-App-inventor
+# blechem
 
-I'm trying to do a re-make of Dataworks project ([attached](https://github.com/GizanTech/GT-Arduino-to-MIT-App-inventor/blob/main/resources/CustomControlUnit-eC%20(2)%20instrument%20works.pdf)). Here you can see the actual source code and almost everything that we need to do. In this project they used EZO EC Sensor but now I'm using EC Meter from DFRobots.
+This Bluetooth Low Energy (BLE) App is responsible of gathering data values from different arduino-based sensors.
+At the moment the app is designed for it to communicate with 5 types of water-sensing sensors:
+```
+pH Sensor
+EC Sensor
+Pressure Sensor
+Weight Sensor
+Temperature Sensor
+```
+All this sensors can be connected at the same time and after finishing the experiment, be sent in .csv format to any e-mail address or saved in the internal mobile phone/tablet memory.
 
-Basically I have 5 different kits (change Arduino BLE for Bluno Nano from DFRobot):
-![image](https://github.com/GizanTech/GT-Arduino-to-MIT-App-inventor/assets/65446169/d96708ea-2c4a-493c-ae0c-5e2ae26f8d52)
+# App Usage Instructions
+When the app is opened you see an empty screen where you can search new device by clicking in the magnifying glass icon.
 
-All of this kits can be paired separately or all together to the bluetooth app (MIT App Inventor) that works for IOS and Android.
+![Welcome](images/screen-0-small.png)
 
-When client opens the app:
-1.	Select to which kit or kits to connect and connect
-2.	See data in real time
-a.	Or Calibrate the sensor (send commands and wait for responses)
-3.	Choose name of the project and time of data gathering (maybe save data every 30 seconds or 5 minutes)
-4.	Start the project
-5.	Finish project and export data to .csv format and send it via e-mail
-The app should not stop the experiment if it is in background task (if the app is minimized) 
+When you click the magnifying glass all the BLE available devices are shown. In this example we click on "PH" to conect to pH Sensor.
 
-All the kits are already working (reading the sensor and saving it to SD), I can send you all the codes but with the RS232 kit I may be needing help because I could not test it yet because I don't have a device that outputs RS232 yet.
+![pH Sensor Connect](images/screen-search-device-small.png)   -->   ![pH Sensor Connected](images/screen-device-conected-small.png)
 
-I think with this we have almost everything. Any doubt you may tell me.
+_maybe device will ask a pin number if it's first time being paired. try 000000 (six times zero) or 1234 in case of weight sensor_
+
+Once device is connected, see the data being received in Data Display:
+
+![Data Display](images/screen-data-display-small.png)
+
+User can just watch the real-time sensor data values or Start a New Project to save the data for a period of time. Also user can adjust the interval in which the app will record the data values and also assign a project name:
+
+![New Project](images/screen-new-project-small.png)
+
+When New Project's duration is over or button "Stop" is pressed, user will have the choice of sharing the data over e-mail or saving into the internal mobile memory:
+
+![Share or Save](images/screen-save-export-small.png)
+
+If Share is selected the app will bring up the default mail app and will compress the .csv file to be sent:
+
+![Share](images/screen-share-small.png)
+
+Once data is shared user will be able to see a table-formated .csv file:
+
+![csv table](images/csv-table.png)
