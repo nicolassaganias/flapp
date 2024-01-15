@@ -45,7 +45,7 @@ float getEC() {
     Serial.print(temperature, 1);
     Serial.println("^C");
 
-    ecValue = ec.readEC(voltage, temperature);  // convert voltage to EC with temperature compensation
+    ecValue = (ec.readEC(voltage, temperature)*1000);  // convert voltage to EC with temperature compensation
     Serial.print("EC:");
     Serial.print(ecValue, 4);
     Serial.println("ms/cm");
@@ -53,5 +53,3 @@ float getEC() {
   //ec.calibration(voltage, temperature);  // calibration process by Serail CMD
   return ecValue;
 }
-
-
