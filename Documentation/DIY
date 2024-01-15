@@ -1,0 +1,13 @@
+Notes:
+- To pair RS232 Bluetoth Module with HC-05 connected to ESP32:
+  1. Find RS232 Bluetooth address: Add a new bluetooth device in your native bluetooth config. If PIN is asked enter 1234.
+  2. Depending your os  it will vary. In android just click "i" of info in the bluetooth device and the address ex: 00:14:16:74:F5:2D
+  3. Conect HC-05 to ESP32: VCC -- 5v
+                            GND -- GND
+                             TX -- 16
+                             RX -- 17
+  4. Upload this code to ESP32: Firmware/Test code/AT_COMMANDS_HC-05
+  5. In Serial Monitor first write AT if response OK continue.
+    AT+CMODE=1 --> OK
+    AT+BIND=0014:16:74F52D --> OK
+    AT+RESET
