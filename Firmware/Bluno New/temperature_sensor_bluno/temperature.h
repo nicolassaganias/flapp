@@ -49,7 +49,7 @@ float readTemperature() {
   float tempRead = ((MSB << 8) | LSB);  //using two's compliment
   float TemperatureSum = tempRead / 16;
 
-  TemperatureSum = (TemperatureSum - 32) * (5.00/9.00);
+  //TemperatureSum = (TemperatureSum - 32) * (5.00/9.00);
 
   return TemperatureSum;
 }

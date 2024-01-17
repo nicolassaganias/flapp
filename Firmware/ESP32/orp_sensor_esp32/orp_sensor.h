@@ -51,7 +51,7 @@ double avergearray(int* arr, int number) {
 }
 
 
-void snesorLoop() {
+void sensorLoop() {
   static unsigned long orpTimer = millis();  //analog sampling interval
   static unsigned long printTime = millis();
   if (millis() >= orpTimer) {
@@ -60,7 +60,7 @@ void snesorLoop() {
     if (orpArrayIndex == ArrayLenth) {
       orpArrayIndex = 0;
     }
-    orpValue = ((30 * (double)VOLTAGE * 1000) - (75 * avergearray(orpArray, ArrayLenth) * VOLTAGE * 1000 / 4096)) / 75 - OFFSET;  //convert the analog value to orp according the circuit
+    orpValue = (((30 * (double)VOLTAGE * 1000) - (75 * avergearray(orpArray, ArrayLenth) * VOLTAGE * 1000 / 4096)) / 75 - OFFSET)*-1;  //convert the analog value to orp according the circuit
   }
   if (millis() >= printTime)  //Every 800 milliseconds, print a numerical, convert the state of the LED indicator
   {

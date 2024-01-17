@@ -1,15 +1,15 @@
 /*
- * You can send commands in the serial monitor to execute the calibration.
- * Serial Commands:
- *   enterph -> enter the calibration mode
- *   calph   -> calibrate with the standard buffer solution, two buffer solutions(4.0 and 7.0) will be automaticlly recognized
- *   exitph  -> save the calibrated parameters and exit from calibration mode
- */
+   You can send commands in the serial monitor to execute the calibration.
+   Serial Commands:
+     enterph -> enter the calibration mode
+     calph   -> calibrate with the standard buffer solution, two buffer solutions(4.0 and 7.0) will be automaticlly recognized
+     exitph  -> save the calibrated parameters and exit from calibration mode
+*/
 
 #include "DFRobot_PH.h"
 #include <EEPROM.h>
 
-#define PH_PIN A5 // Connect the ph sensor with Bluno A5 Analog pin
+#define PH_PIN A1 // Ph_01 is in A1
 float voltage, phValue, temperature = 25;
 DFRobot_PH ph;
 
@@ -24,7 +24,9 @@ float getPH() {
     //temperature = readTemperature();         // read your temperature sensor to execute temperature compensation
     voltage = analogRead(PH_PIN) / 1024.0 * 5000;  // read the voltage
     phValue = ph.readPH(voltage, temperature);     // convert voltage to pH with temperature compensation
+//    Serial.print("pH:");
+//    Serial.println(phValue, );
   }
-  //ph.calibration(voltage, temperature);  // calibration process by Serail CMD
+  ph.calibration(voltage, temperature);  // calibration process by Serail CMD
   return phValue;
 }
