@@ -7,7 +7,7 @@
   After the calibration the sensor is ready for measuring!
 **************************************************************/
 
-float OffSet = 0.483;  // Offset voltage
+float OffSet = 0.350;  // Offset voltage
 
 float V, P;
 
@@ -15,7 +15,9 @@ float V, P;
 float getPressure() {
   //Connect sensor to Analog 0
   V = analogRead(PRESSURE_SENSOR_PIN) * (3.3 / 4095.0);  //Sensor output voltage
+
   P = (V - OffSet) * 250;                                //Calculate water pressure
+  P = P / 100; // To turn Kpa to Bar
 
   Serial.print("Voltage:");
   Serial.print(V, 3);
