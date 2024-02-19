@@ -6,7 +6,7 @@ AT commands for configurating ESP-32
 AT
 AT+ROLE=1
 AT+CMODE=0
-AT+BIND="address"
+AT+BIND=98D3,51,FEE015 // code for rs232 bluetooth module
 ```
 ESP32 sketch for communicating with HC-05 module through rx2 and tx2 (Serial2) like in our conection.
 ```
