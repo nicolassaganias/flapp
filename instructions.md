@@ -29,3 +29,5 @@ void loop()
     Serial2.write(Serial.read());
 }
 ```
+
+# PIN FOR "B35" RS232_MODULE: 1234
