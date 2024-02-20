@@ -7,7 +7,7 @@
   After the calibration the sensor is ready for measuring!
 **************************************************************/
 
-float OffSet = 0.350;  // Offset voltage
+float OffSet = 0.400;  // Offset voltage
 
 float V, P;
 
@@ -15,9 +15,10 @@ float V, P;
 float getPressure() {
   //Connect sensor to Analog 0
   V = analogRead(PRESSURE_SENSOR_PIN) * (3.3 / 4095.0);  //Sensor output voltage
+  //V = analogRead(PRESSURE_SENSOR_PIN) * (5 / 1024);  //Sensor output voltage
 
   P = (V - OffSet) * 250;                                //Calculate water pressure
-  P = P / 100; // To turn Kpa to Bar
+  P = ((P / 100) / 6) * 1000 ; // / 100 To turn Kpa to Bar // / 7 for calibratingfactor for Preassure03 // * 1000 for mbar
 
   Serial.print("Voltage:");
   Serial.print(V, 3);
@@ -25,7 +26,7 @@ float getPressure() {
 
   Serial.print(" Pressure:");
   Serial.print(P, 1);
-  Serial.println(" KPa");
+  Serial.println(" Bar");
   Serial.println();
 
   return P;
