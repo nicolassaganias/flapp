@@ -3,6 +3,7 @@
 For binding HC-05 module of weight sensor with bluetooth rs232 module.
 AT commands for configurating ESP-32
 
+** rs232 module needs the jumpers to be connected to "device" 
 ** to check the bluetooth address use "Bluetooth Scanner" app in android
 ```
 AT
