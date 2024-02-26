@@ -34,3 +34,12 @@ void loop()
 ```
 
 # PIN FOR "B35" RS232_MODULE: 1234
+
+# instructions for updating Flapp:
+for devices connected to lequiamembranes google account:
+1. long hold Flapp's icon
+2. select "i" or "information" according to the device
+3. clear all data (storage and caché)
+4. uninstall the app
+5. go to google drive app
+6. look for Flapp's desired version, download and install
