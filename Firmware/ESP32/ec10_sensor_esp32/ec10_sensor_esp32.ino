@@ -7,11 +7,9 @@
 #include "ble_server.h"
 
 void setup() {
-  Serial.begin(115200);
-
+  Serial.begin(115200);  
   configBLE();
   configEC();
-
 }
 
 void loop() {

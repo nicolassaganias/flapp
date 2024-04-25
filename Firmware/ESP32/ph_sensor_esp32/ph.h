@@ -39,11 +39,10 @@ float getPH() {
     Serial.print(phtemperature, 1);
     Serial.println("^C");
 
-    phValue = ph.readPH(phvoltage, phtemperature);  // convert voltage to pH with temperature compensation
+    phValue = (ph.readPH(phvoltage, phtemperature));  // convert voltage to pH with temperature compensation
     Serial.print("pH:");
     Serial.println(phValue, 4);
   }
   ph.calibration(phvoltage, phtemperature);  // calibration process by Serail CMD
   return phValue;
 }
-

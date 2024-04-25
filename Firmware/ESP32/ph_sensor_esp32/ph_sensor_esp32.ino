@@ -14,13 +14,10 @@ void setup() {
 
   Serial.println("Start");
 
-  
-
 }
 
 void loop() {
   //getPH();
   //send_data("15");
-
 }
   

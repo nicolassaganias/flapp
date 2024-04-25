@@ -1,4 +1,4 @@
-#define VOLTAGE 5.00  //system voltage
+#define VOLTAGE 3.30  //system voltage
 #define OFFSET 0      //zero drift voltage
 
 double orpValue;
@@ -60,7 +60,7 @@ void sensorLoop() {
     if (orpArrayIndex == ArrayLenth) {
       orpArrayIndex = 0;
     }
-    orpValue = (((30 * (double)VOLTAGE * 1000) - (75 * avergearray(orpArray, ArrayLenth) * VOLTAGE * 1000 / 4096)) / 75 - OFFSET)*-1;  //convert the analog value to orp according the circuit
+    orpValue = (((30 * (double)VOLTAGE * 1000) - (75 * avergearray(orpArray, ArrayLenth) * VOLTAGE * 1000 / 4096)) / 75 - OFFSET);  //convert the analog value to orp according the circuit
   }
   if (millis() >= printTime)  //Every 800 milliseconds, print a numerical, convert the state of the LED indicator
   {

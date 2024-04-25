@@ -28,8 +28,8 @@ DFRobot_ESP_PH::DFRobot_ESP_PH()
 {
     this->_temperature = 25.0;
     this->_phValue = 7.0;
-    this->_acidVoltage = 2032.44;   //buffer solution 4.0 at 25C
-    this->_neutralVoltage = 1500.0; //buffer solution 7.0 at 25C
+    this->_acidVoltage = 3066.44;   //buffer solution 4.0 at 25C used to be 2032.44
+    this->_neutralVoltage = 2447.84; //buffer solution 7.0 at 25C used to be 1500.00
     this->_voltage = 1500.0;
 }
 

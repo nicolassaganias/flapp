@@ -36,7 +36,7 @@ float getEC() {
 
     timepoint = millis();
     //voltage = ads.readADC_SingleEnded(0) / 10;
-    voltage = analogRead(EC_PIN) / ESPADC * ESPVOLTAGE;  // read the voltage
+    voltage = analogRead(EC_PIN) / ESPADC * ESPVOLTAGE * 2.4;  // read the voltage
     Serial.print("voltage:");
     Serial.println(voltage, 4);
 
@@ -53,5 +53,3 @@ float getEC() {
   //ec.calibration(voltage, temperature);  // calibration process by Serail CMD
   return ecValue;
 }
-
-
