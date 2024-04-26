@@ -5,11 +5,12 @@ AT commands for configurating ESP-32
 
 ** rs232 module needs the jumpers to be connected to "device" 
 ** to check the bluetooth address use "Bluetooth Scanner" app in android
+** open file named "AT_COMANDS.ino"
 ```
 AT
 AT+ROLE=1
 AT+CMODE=0
-AT+BIND=98D3,51,FEE015 // code for rs232 bluetooth module
+AT+BIND=98D3,51,FEE015 // code for rs232 bluetooth module BC53 (new models) code for SH-B30 (old modules) is 0014,03,05071E
 ```
 ESP32 sketch for communicating with HC-05 module through rx2 and tx2 (Serial2) like in our conection.
 ```
