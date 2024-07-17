@@ -6,6 +6,10 @@ AT commands for configurating ESP-32
 ** rs232 module needs the jumpers to be connected to "device" 
 ** to check the bluetooth address use "Bluetooth Scanner" app in android
 ** open file named "AT_COMANDS.ino"
+** put hc-05 module into AT MODE: 
+				1. unplug the module
+				2. hold push button
+				3. while holding plug the module
 ```
 AT
 AT+ROLE=1
