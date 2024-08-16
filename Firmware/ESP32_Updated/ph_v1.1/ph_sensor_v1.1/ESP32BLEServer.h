@@ -1,20 +1,23 @@
 #include <BLEDevice.h>  // Required Library
 #include <BLEServer.h>  // Required Library
+#include <Arduino.h>
 
 // Define service and all characteristic uuid
 #define SERVICE_UUID "4fafc201-1fb5-459e-8fcc-c5c9c331914b"
 #define CHAR_UUID "4a37b01d-364e-44d9-9335-770e2025b29f"
 
-#define TAG "w:"
-
-#define UNIT "unit:g"
-#define INFO "info:both balance"
+#define ENTER "ENTERPH"
+#define CAL "CALPH"
+#define EXIT "EXITPH"
+#define TAG "ph:"
 
 BLEServer* pServer = NULL;  // BLEServer object creation
 
 // All charateristic object creation
 BLECharacteristic* characteristic = NULL;
+
 bool deviceConnected = false;
+
 String receivedData;
 
 // Callback function for checking the BLE is connected to anything or not
@@ -46,19 +49,33 @@ class MyCallbacks : public BLECharacteristicCallbacks {
       for (int i = 0; i < value.length(); i++) {
         receivedData += value[i];
       }
-      Serial.print("New value: ");
-      Serial.println(receivedData);
+      // Serial.print("New value: ");
+      // Serial.println(receivedData);
       if (receivedData == "od") {
-        send_data((String)weight);
-      }
-      else if (receivedData == "pair") {
+        float pHValue = readpHSensor();
+        send_data((String)pHValue);
+
+      } else if (receivedData == "pair") {
         send_data("pair");
-      }
-      else if (receivedData == "unit") {
-        send_data((String)UNIT);
-      }
-      else if (receivedData == "info") {
-        send_data((String)INFO);
+      } else if (receivedData == "enterph") {
+        int status = 1;
+        send_data((String)status);
+      } else if (receivedData.indexOf("calph") >= 0) {
+        Serial.println("Reading...................");
+        float pH_value = readpHSensor();
+        if (pH_value <= standard_solution) {
+          Serial.println("Current Offset value: ");
+          Offset = standard_solution - pH_value;
+        }
+        preferences.begin("myApp", false);
+        preferences.putFloat("Offset", Offset);
+        preferences.end();
+        Serial.println(Offset);
+        int status = 2;
+        send_data((String)status);
+      } else if (receivedData == "exitph") {
+        int status = 5;
+        send_data((String)status);
       }
     }
   }
@@ -66,7 +83,7 @@ class MyCallbacks : public BLECharacteristicCallbacks {
 
 // Function for creating a service and multiple characteristics and configure BLE in esp32
 void configBLE() {
-  BLEDevice::init("Weight_RO");                   // BLE Initialization
+  BLEDevice::init("Ph (v1.1)");                        // BLE Initialization
   pServer = BLEDevice::createServer();             // Create a BLE Server
   pServer->setCallbacks(new MyServerCallbacks());  // Set the callback function for checking the device is connected or not
 

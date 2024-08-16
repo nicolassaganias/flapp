@@ -7,7 +7,7 @@
   After the calibration the sensor is ready for measuring!
 **************************************************************/
 
-float OffSet = 0.400;  // Offset voltage
+float OffSet = 0.383;  // Offset voltage
 
 float V, P;
 
@@ -26,7 +26,7 @@ float getPressure() {
 
   Serial.print(" Pressure:");
   Serial.print(P, 1);
-  Serial.println(" Bar");
+  Serial.println(" mBar");
   Serial.println();
 
   return P;

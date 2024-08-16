@@ -1,4 +1,4 @@
-#define pH_SENSOR_PIN 39  
+#define pH_SENSOR_PIN 13  
 
 #define ESPADC 4096.0    // the esp Analog Digital Convertion value
 #define ESPVOLTAGE 3300  // the esp voltage supply value

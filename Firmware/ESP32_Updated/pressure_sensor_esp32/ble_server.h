@@ -1,5 +1,6 @@
 #include <BLEDevice.h>  // Required Library
 #include <BLEServer.h>  // Required Library
+#include <Arduino.h>
 
 // Define service and all characteristic uuid
 #define SERVICE_UUID "4fafc201-1fb5-459e-8fcc-c5c9c331914b"
@@ -45,7 +46,7 @@ void send_data(String data2) {
 // Callback function for receiving data from client and process it
 class MyCallbacks : public BLECharacteristicCallbacks {
   void onWrite(BLECharacteristic* pCharacteristic) {
-    std::string value = pCharacteristic->getValue();
+    String value = pCharacteristic->getValue();
     receivedData = "";
     if (value.length() > 0) {
       for (int i = 0; i < value.length(); i++) {
