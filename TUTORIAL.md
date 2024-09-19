@@ -1,4 +1,4 @@
-## Flapp has different layer according to your knowlodge of Electronics and C++ Programming
+### Flapp has different layer according to your knowlodge of Electronics and C++ Programming
 
 **Layer 1: User.** Knows how to use the devices and the app
 
