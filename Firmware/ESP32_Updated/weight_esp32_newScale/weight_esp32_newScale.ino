@@ -1,5 +1,6 @@
 #include "weight.h"
 #include "ble_server.h"
+#include "arduino.h"
 
 void setup() {
   Serial.begin(115200);   // Initialize the Bluno BLE Serial
