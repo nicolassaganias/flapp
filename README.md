@@ -1,13 +1,14 @@
 # Flapp
 
-This Bluetooth Low Energy (BLE) App is responsible of gathering data values from different arduino-based sensors.
-At the moment the app is designed for it to communicate with 5 types of water-sensing sensors:
+This Bluetooth Low Energy (BLE) App is responsible of gathering data values from different esp32-based sensor devices.
+At the moment the app is designed for it to communicate with 6 types of water-sensing electronic sensors:
 ```
-pH Sensor
-EC Sensor
-Pressure Sensor
-Weight Sensor (digital scales with RS232 or analog output)
-Temperature Sensor
+pH 
+EC 
+ORP 
+Pressure 
+Weight  (digital scales with RS232 or analog output)
+Temperature
 ```
 All this sensors can be connected at the same time and after finishing the experiment, be sent in .csv format to any e-mail address or saved in the internal mobile phone/tablet memory.
 
