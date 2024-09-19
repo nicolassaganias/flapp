@@ -1,13 +1,17 @@
-Flapp has different layer according to your knowlodge of Electronics and C++ Programming
+##Flapp has different layer according to your knowlodge of Electronics and C++ Programming
 
-Layer 1: User. Knows how to use the devices and the app
-Layer 2: DIY/DIWO User. Knows how to solder and upload code to ESP-32 board and can buy the Electronic components according to his/her needs
-Layer 3: Advanced User. Knows how to modify systems and code and to make new devices. Makes contribution to Flapp community.
+**Layer 1: User.** Knows how to use the devices and the app
 
-Layer 1. User: Refer to "App Usage Instructions" in README.md file
-Layer 2: DIYO/DIWO User/s:
+**Layer 2: DIY/DIWO User.** Knows how to solder and upload code to ESP-32 board and can buy the Electronic components according to his/her needs
 
-Materials:
+**Layer 3: Advanced User.** Knows how to modify systems and code and to make new devices. Makes contribution to Flapp community.
+
+
+##Layer 1. User: Refer to "App Usage Instructions" in README.md file
+
+##Layer 2: DIYO/DIWO User/s:
+
+**Materials:**
 In all cases we use ESP-32 board as main controller where the sensors are physically conected trhough soldering and cables and also the one that interacts with the mobile phone app, sending the data thrpugh a BLE adapter that is within the board. The enclosure can be hand made or 3D printed. All the 3D files are in .../3d-files
 
 Regarding the hardware: According to your needs you will need different elements, for example a phSensorBoard and a probe to build a phSensor or a HC-05 to be able to read a digital Scale.
