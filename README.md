@@ -1,5 +1,10 @@
 # Flapp
 
+Proof-of-concept studies and lab scale setups are required which is a crucial path towards the emergence of new ideas and their transferability towards implementation. Such studies within research (academia or enterprise) are often limited by the availability of flexible, low-cost and portable devices that allow small configurations to be mounted, monitored and controlled.
+The emergence of 3D printing, Arduino based environment and alternative source of supply pushed towards the Do-your-own (DYO) approach which is supported by online communities allowing for the development of cheap and interactive alternatives.
+
+This work received the support of a fellowship from the “la Caixa” Foundation (ID 100010434). The fellowship code is LCF/BQ/PR21/11840009.
+
 This Bluetooth Low Energy (BLE) App is responsible of gathering data values from different esp32-based sensor devices.
 At the moment the app is designed for it to communicate with 6 types of water-sensing electronic sensors:
 ```
