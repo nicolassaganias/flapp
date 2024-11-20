@@ -43,7 +43,7 @@ void send_data(String data2) {
 // Callback function for receiving data from client and process it
 class MyCallbacks : public BLECharacteristicCallbacks {
   void onWrite(BLECharacteristic* pCharacteristic) {
-    String value = pCharacteristic->getValue();
+     std::string value = pCharacteristic->getValue();
     receivedData = "";
     if (value.length() > 0) {
       for (int i = 0; i < value.length(); i++) {

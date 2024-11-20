@@ -1,7 +1,7 @@
 #define EC_SENSOR_PIN 13
 
 #define ESPADC 4096.0    // the esp Analog Digital Convertion value
-#define ESPVOLTAGE 5000  // the esp voltage supply value
+#define ESPVOLTAGE 3300  // the esp voltage supply value
 
 #include "ec.h"
 #include "ble_server.h"

@@ -15,7 +15,7 @@ DFRobot_ESP_PH ph;  // pH Object creation
 
 #define PH_PIN pH_SENSOR_PIN
 
-float phvoltage, phValue, phtemperature = 25;
+float phvoltage, phValue, phtemperature = 21;
 
 // Function for configure pH Sensor
 void configPH() {

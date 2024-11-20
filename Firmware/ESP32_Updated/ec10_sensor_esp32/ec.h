@@ -16,7 +16,7 @@
 DFRobot_EC10 ec;  // EC object creation
 //Adafruit_ADS1115 ads;  // Required when use external ADC
 
-float voltage, ecValue, temperature = 25;
+float voltage, ecValue, temperature = 21;
 
 
 // Function for configuring EC Sensor
