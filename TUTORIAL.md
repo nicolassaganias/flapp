@@ -1,6 +1,6 @@
 **Flapp has different layer according to your knowlodge of Electronics and C++ Programming:**
 
-**Layer 1: User.** Knows how to use the devices and the app
+**Layer 1: User.** Knows how to use the devices and the app.
 
 **Layer 2: DIY/DIWO User.** Knows how to solder and upload code to ESP-32 board and can buy the Electronic components according to his/her needs
 
