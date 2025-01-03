@@ -41,7 +41,7 @@ char* DFRobot_EC10::strupr(char* str) {
 
 DFRobot_EC10::DFRobot_EC10() {
   this->_ecvalue = 0.0;
-  this->_kvalue = 1.0;
+  this->_kvalue = 10.0;
   this->_cmdReceivedBufferIndex = 0;
   this->_voltage = 0.0;
   this->_temperature = 25;
@@ -53,7 +53,7 @@ DFRobot_EC10::~DFRobot_EC10() {
 void DFRobot_EC10::begin() {
   EEPROM_read(KVALUEADDR, this->_kvalue);  //read the calibrated K value from EEPROM
   if ((EEPROM.read(KVALUEADDR) == 0xFF && EEPROM.read(KVALUEADDR + 1) == 0xFF && EEPROM.read(KVALUEADDR + 2) == 0xFF && EEPROM.read(KVALUEADDR + 3) == 0xFF) || (this->_kvalue > 100) || (this->_kvalue < 0.01)) {
-    this->_kvalue = 1.0;
+    this->_kvalue = 10.0;
     EEPROM_write(KVALUEADDR, this->_kvalue);
   }
   Serial.print("_kvalue:");
