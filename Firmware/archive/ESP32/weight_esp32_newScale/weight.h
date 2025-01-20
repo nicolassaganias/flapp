@@ -29,6 +29,6 @@ void getWeight(){
     }
     weight = numericString;
     // Print the extracted numeric string
-    Serial.println(numericString);
+    //Serial.println(numericString);
   }
 }

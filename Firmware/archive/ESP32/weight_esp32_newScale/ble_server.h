@@ -7,6 +7,9 @@
 
 #define TAG "w:"
 
+#define UNIT "unit:g"
+#define INFO "info:new"
+
 BLEServer* pServer = NULL;  // BLEServer object creation
 
 // All charateristic object creation
@@ -50,6 +53,12 @@ class MyCallbacks : public BLECharacteristicCallbacks {
       }
       else if (receivedData == "pair") {
         send_data("pair");
+      }
+      else if (receivedData == "unit") {
+        send_data((String)UNIT);
+      }
+      else if (receivedData == "info") {
+        send_data((String)INFO);
       }
     }
   }
