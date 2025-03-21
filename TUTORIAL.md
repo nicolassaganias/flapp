@@ -1,3 +1,6 @@
+**FULL TUTORIAL UPDATED IN: https://docs.google.com/document/d/1VwzJdGcVvCzKNY8GULeiO_EsNGnJ2SCh/edit?usp=sharing&ouid=111671341203653565068&rtpof=true&sd=true**
+
+
 **Flapp has different layer according to your knowlodge of Electronics and C++ Programming:**
 
 **Layer 1: User.** Knows how to use the devices and the app.
